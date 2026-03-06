@@ -1,0 +1,12 @@
+name: ArabicBridge
+version: 1.2
+main: mas.minecraft.foxs.arabicFixer.Main
+api-version: "1.21"
+author: 7UPf
+description: ArabicBridge fixes broken Arabic text on Java while preserving Bedrock chat
+softdepend: [floodgate]
+prefix: ArabicBridge
+commands:
+  arabicbridge:
+    description: Shows info and usage for ArabicBridge
+    usage: /arabicbridge
