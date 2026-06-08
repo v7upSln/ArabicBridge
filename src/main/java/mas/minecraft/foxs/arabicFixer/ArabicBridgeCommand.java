@@ -16,27 +16,13 @@ public class ArabicBridgeCommand implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        sender.sendMessage(Component.text("ArabicBridge ", NamedTextColor.GOLD)
-                .append(Component.text("v1.2", NamedTextColor.WHITE)));
-        sender.sendMessage(Component.text("Author: ", NamedTextColor.GRAY)
-                .append(Component.text("7UPf", NamedTextColor.AQUA)));
-        sender.sendMessage(Component.text("Detection: ", NamedTextColor.YELLOW)
-                .append(Component.text("Arabic-only messages are processed; mixed text untouched.", NamedTextColor.WHITE)));
-        sender.sendMessage(Component.text("Reshaping: ", NamedTextColor.YELLOW)
-                .append(Component.text("Letters are contextualized for proper joining.", NamedTextColor.WHITE)));
-        sender.sendMessage(Component.text("Reversal: ", NamedTextColor.YELLOW)
-                .append(Component.text("Text reversed for right-to-left display on Java.", NamedTextColor.WHITE)));
-        if (floodgateAvailable) {
-            sender.sendMessage(Component.text("Platform: ", NamedTextColor.YELLOW)
-                    .append(Component.text("Bedrock sees original text; Java sees reshaped+reversed.", NamedTextColor.WHITE)));
-        } else {
-            sender.sendMessage(Component.text("Platform: ", NamedTextColor.YELLOW)
-                    .append(Component.text("Floodgate not found; all players see reshaped+reversed.", NamedTextColor.WHITE)));
-        }
-        sender.sendMessage(Component.text("Example: ", NamedTextColor.YELLOW)
-                .append(Component.text("الله -> ﷲ", NamedTextColor.WHITE)));
-        sender.sendMessage(Component.text("Usage: ", NamedTextColor.GRAY)
-                .append(Component.text("/arabicbridge", NamedTextColor.WHITE)));
+        sender.sendMessage(Component.text("ArabicBridge v1.3", NamedTextColor.GOLD)
+                .append(Component.text(" by 7UPf", NamedTextColor.GRAY)));
+        sender.sendMessage(Component.text(
+                floodgateAvailable
+                        ? "Floodgate detected — Bedrock gets clean text, Java gets fixed."
+                        : "No Floodgate — everyone gets fixed Arabic.",
+                NamedTextColor.GRAY));
         return true;
     }
 }

@@ -1,6 +1,7 @@
 package mas.minecraft.foxs.arabicFixer;
 
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bstats.bukkit.Metrics;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -14,6 +15,8 @@ public class Main extends JavaPlugin {
     @Override
     public void onEnable() {
         getServer().getPluginManager().registerEvents(new ChatHandler(this), this);
+        int bStatsPluginId = 31880;
+        new Metrics(this, bStatsPluginId);
         getLogger().info("ArabicBridge enabled!");
         getLogger().info("Version: " + getDescription().getVersion());
         getLogger().info("Server: " + getServer().getVersion());
